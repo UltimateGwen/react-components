@@ -1,33 +1,43 @@
 import React from "react";
-import Contact from "./components/Contact";
+import ContactList from "./components/ContactList";
+
+const users = [
+  {
+    id: 1,
+    name: "Leo Harris",
+    online: false,
+    avatar: "https://randomuser.me/api/portraits/men/28.jpg"
+  },
+  {
+    id: 2,
+    name: "Frank Morales",
+    online: true,
+    avatar: "https://randomuser.me/api/portraits/men/2.jpg"
+  },
+  {
+    id: 3,
+    name: "Dave Sanders",
+    online: false,
+    avatar: "https://randomuser.me/api/portraits/men/34.jpg"
+  },
+  {
+    id: 4,
+    name: "Calvin Alexander",
+    online: true,
+    avatar: "https://randomuser.me/api/portraits/men/47.jpg"
+  },
+  {
+    id: 5,
+    name: "Kurt Foster",
+    online: true,
+    avatar: "https://randomuser.me/api/portraits/men/12.jpg"
+  }
+];
 
 function App() {
-  const users = [
-    {
-      id: 3,
-      name: "Riccardo",
-      online: false,
-      avatar: "https://randomuser.me/api/portraits/men/75.jpg"
-    },
-    {
-      id: 2,
-      name: "Genoveffa",
-      online: true,
-      avatar: "https://randomuser.me/api/portraits/men/75.jpg"
-    },
-    {
-      id: 3,
-      name: "Rick",
-      online: false,
-      avatar: "https://randomuser.me/api/portraits/men/88.jpg"
-    }
-  ];
-
   return (
     <div className="App">
-      {users.map(user => (
-        <Contact name={user.name} online={user.online} avatar={user.avatar} />
-      ))}
+      <ContactList users={users} />
     </div>
   );
 }
